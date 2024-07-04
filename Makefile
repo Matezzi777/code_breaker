@@ -5,7 +5,7 @@ SRCS = main.c \
 		code_breaker.c \
 		code_breaker_utils.c
 
-OBJ = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 BIN = code_breaker
 
 all : $(BIN)
@@ -16,7 +16,7 @@ $(BIN): $(OBJS)
 
 $(OBJS):
 	@echo ***** Building the .o files *****
-	$(CC) $(CFLAGS) -c $(SRC) -o $@
+	$(CC) $(CFLAGS) -c $(SRCS) -I./
 
 fclean: clean
 	@echo ***** Removing the program *****
