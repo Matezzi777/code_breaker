@@ -1,8 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.c \
-		code_breaker.c \
+SRCS = code_breaker.c \
 		code_breaker_utils.c
 
 OBJS = $(SRCS:.c=.o)
@@ -11,19 +10,19 @@ BIN = code_breaker
 all : $(BIN)
 
 $(BIN): $(OBJS)
-	@echo ***** Building the program $@ *****
-	$(CC) $^ -o $@
+	@echo --- Building $@ ---
+	$(CC) main.c $^ -o $@
 
 $(OBJS):
-	@echo ***** Building the .o files *****
+	@echo --- Building .o files ---
 	$(CC) $(CFLAGS) -c $(SRCS) -I./
 
 fclean: clean
-	@echo ***** Removing the program *****
+	@echo --- Removing $(BIN) ---
 	$(RM) $(BIN)
 
 clean:
-	@echo ***** Removing the .o files *****
+	@echo --- Removing .o files ---
 	$(RM) *.o
 
 re: fclean all
