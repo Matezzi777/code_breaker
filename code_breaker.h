@@ -2,7 +2,7 @@
 # define CODE_BREAKER
 
 //Include libraries
-# include <stdio.h>
+# include <stdio.h> // printf()
 # include <stdlib.h>
 
 //Include functions
